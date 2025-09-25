@@ -1,0 +1,49 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Iremos aprender semana que vem */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: white;
+}
+
+header {
+    background-color: lightblue; /*Muda cor de fundo*/
+}
+
+main {
+    font-size: 16px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    line-height: 2;
+    letter-spacing: 2px;
+    text-indent: 5px;
+    color: #FFFFFF;
+}
+
+div {
+    font-size: 16px;
+}
+
+main > section > div > p {
+    font-size: 1em;
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+}
