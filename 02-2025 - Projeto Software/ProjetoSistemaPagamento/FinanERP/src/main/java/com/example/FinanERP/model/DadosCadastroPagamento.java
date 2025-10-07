@@ -9,7 +9,7 @@ public record DadosCadastroPagamento(
         TipoSaida tipoSaida,
         double valor,
         LocalDate dataPagamento,
-        String descricacao
+        String descricao
 ) {
 
 }
