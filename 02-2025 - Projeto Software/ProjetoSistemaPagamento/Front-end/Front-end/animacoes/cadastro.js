@@ -20,7 +20,7 @@ form.addEventListener('submit' , (event) => {
     fetch("http://localhost:8080/pagamentos", {
         method: "POST",
         headers: {
-            'Content-type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(dados)
     })
