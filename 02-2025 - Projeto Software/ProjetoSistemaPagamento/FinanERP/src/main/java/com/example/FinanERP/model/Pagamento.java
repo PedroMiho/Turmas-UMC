@@ -6,9 +6,13 @@ import lombok.*;
 import java.time.LocalDate;
 
 //Anotação para identificar a tabela aonde os dados serão salvos
-@Table(name = "pagamentos")
+@Table(name = "pagamento")
 @Entity (name = "Pagamento")
 @EqualsAndHashCode(of = "id")
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 public class Pagamento {
 
 
@@ -22,8 +26,6 @@ public class Pagamento {
     private LocalDate dataPagamento;
     private String descricao;
 
-    public Pagamento() {
-    }
 
     public Pagamento(DadosCadastroPagamento pagamento) {
         this.tipo = pagamento.tipo();
@@ -33,51 +35,5 @@ public class Pagamento {
         this.descricao = pagamento.descricao();
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public LocalDate getDataPagamento() {
-        return dataPagamento;
-    }
-
-    public void setDataPagamento(LocalDate dataPagamento) {
-        this.dataPagamento = dataPagamento;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 }

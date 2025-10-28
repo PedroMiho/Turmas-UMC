@@ -4,7 +4,7 @@ form.addEventListener('submit' , (event) => {
     event.preventDefault();
 
     const tipo = document.getElementById("tipo").value
-    const nomeCliente = document.getElementById("campoNome").value
+    const nomeCliente = document.getElementById("nomeCliente").value
     const descricao = document.getElementById("descricao").value
     const valor = parseFloat(document.getElementById("valor").value)
     const data = document.getElementById("dataPagamento").value
