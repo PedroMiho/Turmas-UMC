@@ -26,7 +26,23 @@ form.addEventListener('submit' , (event) => {
     })
     .then(response => {
         console.log(response.ok);
-        
+        const mensagem = document.getElementById("mensagem")
+
+        if (response.ok) {
+            mensagem.innerHTML = "Dados Cadastrados com sucesso";
+            mensagem.classList.add("text-success");
+            mensagem.classList.remove("text-danger");
+            form.reset();
+        } else {
+            mensagem.innerHTML = "Erro ao cadastrar pagamento";
+            mensagem.classList.add("text-danger");
+            mensagem.classList.remove("text-success");
+        }
+    }) .catch(error => {
+            const mensagem = document.getElementById("mensagem")
+            mensagem.innerHTML = "Erro na requisição " + error.message;
+            mensagem.classList.add("text-danger");
+            mensagem.classList.remove("text-success");
     })
     
 })

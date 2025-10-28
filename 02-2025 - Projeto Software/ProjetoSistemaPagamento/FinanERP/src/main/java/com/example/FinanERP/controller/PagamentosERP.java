@@ -29,6 +29,5 @@ public class PagamentosERP {
     @GetMapping("/tipo/{tipo}")
     public List<Pagamento> listarPagamentosPorTipo(@PathVariable Tipo tipo) {
         return pagamentosRepository.findByTipo(tipo);
-
     }
 }
