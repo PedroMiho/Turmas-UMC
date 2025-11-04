@@ -48,6 +48,11 @@ function exibePagamentos(dados) {
         btnExcluir.className = "btn-excluir"
         btnExcluir.dataset.id = pagamento.id
 
+        btnExcluir.addEventListener("click" , () => {
+            excluirPagamento(pagamento.id)
+        })
+
+
         //Cria o td ações
         let acoes = document.createElement("td")
         acoes.appendChild(btnEditar)
@@ -69,30 +74,31 @@ function exibePagamentos(dados) {
 
 }
 
+function excluirPagamento(id){
+    if(confirm("Tem certeza que deseja excluir o pagamento ?")){
+        fetch(`http://localhost:8080/pagamentos/${id}` , {
+            method: "DELETE"
+        }).then(res => {
+            if (res.ok){
+                alert("PAGAMENTO EXCLUÍDO COM SUCESSO")
+                buscaPagamentos()
+            } else {
+                alert("ERRO AO EXCLUIR")
+            }
+        }) .catch(error => {
+            alert("ERRO AO CONECTAR")
+        })
+    }
+}
+
 function abrirFormulario(pagamento, linha) {
     let formEdicao = document.getElementById("formEdicao")
     formEdicao.style.display = "block"
 
-    // // Cria uma nova linha da tabela (tr)
-    // let novaLinha = document.createElement("tr");
-    // novaLinha.id = "linhaFormEdicao";
-
-    // // Cria uma célula (td) que ocupa todas as colunas da tabela
-    // let celula = document.createElement("td");
-    // celula.colSpan = 6; // <-- ocupa as 6 colunas da tabela
-
-    // // Move o formulário para dentro dessa célula
-    // celula.appendChild(formEdicao);
-
-    // // Adiciona a célula à linha
-    // novaLinha.appendChild(celula);
-
-    // // Insere a nova linha logo abaixo da linha clicada
-    // linha.insertAdjacentElement("afterend", novaLinha);
-
     // Move o formulário para logo abaixo da linha clicada
     linha.insertAdjacentElement("afterend", formEdicao);
     
+    document.getElementById("editId").value = pagamento.id
     document.getElementById("editNome").value = pagamento.nomeCliente
     document.getElementById("editDescricao").value = pagamento.descricao
     document.getElementById("editValor").value = pagamento.valor
