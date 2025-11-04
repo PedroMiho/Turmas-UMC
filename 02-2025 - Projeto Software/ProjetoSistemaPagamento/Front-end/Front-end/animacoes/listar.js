@@ -39,7 +39,7 @@ function exibePagamentos(dados) {
         btnEditar.dataset.id = pagamento.id
 
         btnEditar.addEventListener("click" , () => {
-            abrirFormulario(pagamento)
+            abrirFormulario(pagamento, linhaPagamento)
         })
 
         //Botão de Exluir
@@ -69,9 +69,29 @@ function exibePagamentos(dados) {
 
 }
 
-function abrirFormulario(pagamento) {
+function abrirFormulario(pagamento, linha) {
     let formEdicao = document.getElementById("formEdicao")
     formEdicao.style.display = "block"
+
+    // // Cria uma nova linha da tabela (tr)
+    // let novaLinha = document.createElement("tr");
+    // novaLinha.id = "linhaFormEdicao";
+
+    // // Cria uma célula (td) que ocupa todas as colunas da tabela
+    // let celula = document.createElement("td");
+    // celula.colSpan = 6; // <-- ocupa as 6 colunas da tabela
+
+    // // Move o formulário para dentro dessa célula
+    // celula.appendChild(formEdicao);
+
+    // // Adiciona a célula à linha
+    // novaLinha.appendChild(celula);
+
+    // // Insere a nova linha logo abaixo da linha clicada
+    // linha.insertAdjacentElement("afterend", novaLinha);
+
+    // Move o formulário para logo abaixo da linha clicada
+    linha.insertAdjacentElement("afterend", formEdicao);
     
     document.getElementById("editNome").value = pagamento.nomeCliente
     document.getElementById("editDescricao").value = pagamento.descricao
