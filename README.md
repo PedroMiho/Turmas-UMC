@@ -2,21 +2,28 @@
 
 Este repositório reúne materiais didáticos, exemplos de código, exercícios e projetos utilizados nas turmas dos cursos de graduação da Universidade de Mogi das Cruzes — UMC.
 
-Os conteúdos estão organizados por semestre, disciplina e turma, facilitando o acesso dos estudantes aos materiais desenvolvidos durante as aulas.
+Os conteúdos são organizados por semestre e disciplina para facilitar o acesso dos estudantes e manter um histórico das aulas desenvolvidas.
 
-## Objetivo
+## Acesso rápido
 
-Organizar e disponibilizar os conteúdos utilizados em cada semestre letivo, mantendo um histórico das aulas, atividades e projetos realizados com as diferentes turmas.
+| Semestre | Disciplina / Turma |
+| --- | --- |
+| 01/2025 | [Lógica de Programação](./01-2025%20-%20L%C3%B3gica%20Programa%C3%A7%C3%A3o/) |
+| 01/2025 | [Projeto de Software](./01-2025%20-%20Projeto%20Software/) |
+| 02/2025 | [Lógica de Programação](./02-2025%20-%20L%C3%B3gica%20Programa%C3%A7%C3%A3o/) |
+| 02/2025 | [Projeto de Software](./02-2025%20-%20Projeto%20Software/) |
+| 01/2026 | [Projeto de Software](./01-2026%20-%20ProjetoSoftware/) |
+| 01/2026 | [Projeto de Software — 3F](./01-2026%20-%20ProjetoSoftware-3F/) |
 
-## Organização do repositório
+## Padrão de organização
 
-As pastas seguem, de maneira geral, o seguinte padrão:
+A estrutura principal segue o padrão:
 
 ```text
-semestre — disciplina ou turma
+SEMESTRE-ANO - DISCIPLINA
 ```
 
-Exemplos encontrados:
+Exemplo:
 
 ```text
 Turmas-UMC/
@@ -26,115 +33,68 @@ Turmas-UMC/
 ├── 02-2025 - Projeto Software/
 ├── 01-2026 - ProjetoSoftware/
 ├── 01-2026 - ProjetoSoftware-3F/
+├── .gitignore
 ├── LICENSE
 └── README.md
 ```
 
-- `01` representa o primeiro semestre do ano.
-- `02` representa o segundo semestre do ano.
-- O ano identifica o período em que o conteúdo foi utilizado.
-- O nome final identifica a disciplina ou turma correspondente.
+Dentro de cada disciplina, os conteúdos são separados por aulas, módulos, exercícios ou projetos.
 
-## Disciplinas e conteúdos
+## Conteúdos
 
 ### Lógica de Programação
 
-Materiais introdutórios relacionados ao desenvolvimento de aplicações web e à construção do raciocínio lógico.
+Os materiais podem abordar:
 
-Entre os assuntos disponíveis estão:
-
-- HTML5;
-- CSS3;
+- HTML5 e CSS3;
 - JavaScript;
-- PHP;
-- estruturas condicionais;
-- estruturas de repetição;
-- manipulação do DOM;
+- estruturas condicionais e de repetição;
+- DOM e eventos;
 - formulários;
+- consumo de APIs;
+- PHP;
 - integração com banco de dados;
 - desenvolvimento de CRUD.
 
 ### Projeto de Software
 
-Materiais voltados para o desenvolvimento de aplicações utilizando Java e conceitos de Programação Orientada a Objetos.
+Os materiais podem abordar:
 
-Entre os assuntos abordados estão:
-
-- introdução ao Java;
-- variáveis e operadores;
-- estruturas condicionais e de repetição;
-- classes e objetos;
-- atributos e métodos;
-- construtores;
+- Java;
+- Programação Orientada a Objetos;
+- classes, objetos, atributos e métodos;
 - encapsulamento;
-- herança;
-- polimorfismo;
-- arrays e `ArrayList`;
+- herança e polimorfismo;
+- interfaces;
+- arrays, vetores e `ArrayList`;
 - tratamento de exceções;
 - JDBC;
-- interfaces gráficas;
+- Maven;
 - APIs REST;
 - Spring Boot;
+- Spring Data JPA;
 - persistência de dados.
 
-## Tecnologias utilizadas
+## Como utilizar
 
-Os exemplos e projetos podem utilizar:
-
-- HTML5
-- CSS3
-- JavaScript
-- PHP
-- Java
-- Spring Boot
-- Spring Data JPA
-- Maven
-- JDBC
-- SQL
-- MySQL
-- Bootstrap
-
-## Como utilizar os materiais
-
-1. Localize o semestre desejado.
-2. Entre na pasta correspondente à disciplina ou turma.
-3. Escolha a aula, atividade ou projeto.
-4. Consulte os arquivos e exemplos disponibilizados.
-5. Verifique os requisitos específicos antes de executar cada projeto.
-
-Para baixar todo o repositório:
+Para clonar o repositório:
 
 ```bash
 git clone https://github.com/PedroMiho/Turmas-UMC.git
-```
-
-Depois, acesse a pasta:
-
-```bash
 cd Turmas-UMC
 ```
 
-## Execução dos projetos
-
-### Projetos web
-
-Projetos desenvolvidos apenas com HTML, CSS e JavaScript podem ser abertos diretamente no navegador ou executados com uma extensão como o Live Server.
-
-Projetos em PHP precisam de um ambiente compatível, como:
-
-- XAMPP;
-- Apache;
-- PHP Development Server.
+Depois, acesse a pasta correspondente ao semestre e à disciplina desejada.
 
 ### Projetos Java
 
-Verifique se o Java está instalado:
+Verifique a instalação do Java:
 
 ```bash
 java --version
 ```
 
-Quando o projeto utilizar Maven e possuir um arquivo `pom.xml`, verifique também:
+Quando o projeto utilizar Maven:
 
 ```bash
 mvn --version
@@ -146,13 +106,30 @@ Projetos Spring Boot normalmente podem ser executados com:
 mvn spring-boot:run
 ```
 
-## Observações importantes
+### Projetos web
 
-- Este repositório possui finalidade acadêmica e didática.
-- Alguns projetos representam etapas intermediárias desenvolvidas durante as aulas.
-- Os exemplos podem ser adaptados conforme a necessidade de cada turma.
-- Alguns projetos podem exigir banco de dados ou configurações locais.
-- Credenciais e informações de acesso não devem ser publicadas.
+Projetos com HTML, CSS e JavaScript podem ser executados diretamente no navegador ou utilizando uma extensão como o Live Server.
+
+Projetos PHP precisam de um ambiente compatível, como XAMPP, Apache ou o servidor de desenvolvimento do PHP.
+
+## Boas práticas do repositório
+
+O `.gitignore` da raiz evita o versionamento de arquivos gerados pela IDE, builds e dependências locais, como:
+
+- `.idea/` e `*.iml`;
+- `target/`, `build/` e `.gradle/`;
+- `node_modules/`;
+- arquivos `.env`;
+- logs e arquivos temporários.
+
+Arquivos desse tipo que já tenham sido versionados anteriormente podem continuar no histórico do Git, mas não devem voltar a ser adicionados em novos commits.
+
+## Observações
+
+- O repositório possui finalidade acadêmica e didática.
+- Alguns projetos representam etapas intermediárias construídas durante as aulas.
+- Alguns exemplos podem exigir banco de dados ou configurações locais.
+- Credenciais, tokens e informações de acesso não devem ser publicados.
 - Semestres anteriores são mantidos como histórico acadêmico.
 
 ## Autor
@@ -165,4 +142,4 @@ Professor de Tecnologia da Informação
 
 ## Licença
 
-Consulte o arquivo [LICENSE](LICENSE) disponível neste repositório.
+Consulte o arquivo [LICENSE](LICENSE).
